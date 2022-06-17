@@ -1,0 +1,7 @@
+body { padding: 5px; }
+a { text-decoration: none; }
+
+#txtLog {
+  width:90%;
+  height:400px;
+}
