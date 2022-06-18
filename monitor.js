@@ -8,7 +8,7 @@ function refreshLog() {
 }
 
 function doClearLog() {
-    chrome.storage.local.set({"sLog":'(cleared)'}, null);
+    chrome.storage.local.set({"sLog":(new Date().toISOString() + ': (cleared)')}, null);
     refreshLog();
 }
 

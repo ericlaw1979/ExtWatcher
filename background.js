@@ -12,7 +12,7 @@ chrome.management.onDisabled.addListener((e)=> {onExtDisable(e); });
 function logEvent(sEvent) {
     chrome.storage.local.get(null, function(info) {
         let sLog = info["sLog"] || "";
-        sLog = new Date().toISOString() + "- " + sEvent + "\n" + info["sLog"];
+        sLog = new Date().toISOString() + ": " + sEvent + "\n" + info["sLog"];
         chrome.storage.local.set({"sLog":sLog}, null);
     });  
 }
