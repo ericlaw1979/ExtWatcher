@@ -18,7 +18,7 @@ function logEvent(sEvent) {
 }
 
 function onExtInstall(e) {
-    logEvent(`Installed id=${e.id},name=${e.shortName},reason=${e.installType}.`);
+    logEvent(`Installed   id=${e.id},name=${e.shortName},reason=${e.installType}.`);
     //chrome.tabs.create({ url: "/monitor.html?op=Install&name=" + e.shortName + "&id=" + e.id });
 }
 function onExtUninstall(id) {
@@ -26,11 +26,11 @@ function onExtUninstall(id) {
     chrome.tabs.create({ url: "/monitor.html?op=Uninstall&id=" + id });
 }
 function onExtEnable(e) {
-    logEvent(`Enabled id=${e.id},name=${e.shortName}.`);
+    logEvent(`Enabled     id=${e.id},name=${e.shortName}.`);
     //chrome.tabs.create({ url: "/monitor.html?op=Enable&name=" + e.shortName + "&id=" + e.id });
 }
 function onExtDisable(e) {
-    logEvent(`Disabled id=${e.id},name=${e.shortName},reason=${e.disabledReason}.`);
+    logEvent(`Disabled    id=${e.id},name=${e.shortName},reason=${e.disabledReason}.`);
     //chrome.tabs.create({ url: "/monitor.html?op=Disable&name=" + e.shortName + "&id=" + e.id + "&reason=" + e.disabledReason });
 }
 // chrome.browserAction.setBadgeText( {text: "dev"} );
