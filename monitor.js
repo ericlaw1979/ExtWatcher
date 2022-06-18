@@ -1,5 +1,6 @@
 "use strict";
 
+// TODO: Autorefresh?
 document.addEventListener('DOMContentLoaded', function() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -14,13 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
             (urlParams.get("name")||"?") + " " + urlParams.get("id") + "| extension.";
     }
 
-    const storage = chrome.storage.local;
-    storage.get(null, function(info) {
+    chrome.storage.local.get(null, function(info) {
         let sLog = info["sLog"] || "";
         document.getElementById("txtLog").textContent = sLog;
-
-        sLog = document.getElementById("txtEvent").textContent + "\n" + info["sLog"];
-        if (sOp && sOp != "ShowLog") storage.set({"sLog":sLog}, null);
     });
 
 }, false);
