@@ -2,8 +2,8 @@
   "manifest_version": 2,
   "name": "extWatcher",
   "short_name": "extWatcher",
-  "description": "Watch a Chromium-based browser for extension install and removal events",
-  "version": "1.0.0.0",
+  "description": "Watch a Chromium-based browser for extension install and removal events.",
+  "version": "1.0.0.1",
   "author": "Eric Lawrence (@ericlaw)",
 
   "icons": {
