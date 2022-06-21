@@ -1,7 +1,13 @@
 "use strict"
 
-// Background page
-// https://developer.chrome.com/extensions/event_pages
+// Background serviceworker
+// https://developer.chrome.com/docs/extensions/mv3/migrating_to_service_workers/
+
+// Handle case where user clicked on our button.
+chrome.action.onClicked.addListener((t)=>{
+    chrome.tabs.create({ url: "/monitor.html?op=ShowLog" });
+  }
+);
 
 chrome.management.onInstalled.addListener((e)=> { onExtInstall(e); });
 chrome.management.onUninstalled.addListener((e)=> {onExtUninstall(e); });
@@ -34,9 +40,6 @@ function onExtDisable(e) {
     //chrome.tabs.create({ url: "/monitor.html?op=Disable&name=" + e.shortName + "&id=" + e.id + "&reason=" + e.disabledReason });
 }
 
-chrome.browserAction.onClicked.addListener((t)=>{
-      chrome.tabs.create({ url: "/monitor.html?op=ShowLog" });
-    }
-);
+
 
   
